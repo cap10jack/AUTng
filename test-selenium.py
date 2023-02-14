@@ -3,15 +3,13 @@ from selenium.webdriver.common.keys import Keys
 import time
 from selenium.webdriver.chrome.options import Options
 # driver = webdriver.Chrome()
-from webdriver_manager.chrome import ChromeDriverManager
+dd
 chrome_options = Options()
 chrome_options.add_argument("--headless")
-driver = webdriver.Chrome(ChromeDriverManager().install(),options=chrome_options)
+driver = webdriver.Chrome(options=chrome_options)
 
 # driver = webdriver.Chrome(options=chrome_options)
-import requests
-res = requests.get('http://localhost:80/index.php')
-print(res.text)
+
 driver.get("http://localhost:80/index.php")
 
 # wait web driver 
