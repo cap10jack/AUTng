@@ -1,7 +1,7 @@
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 import time
-
+from selenium.webdriver.chrome.options import Options
 # driver = webdriver.Chrome()
 from webdriver_manager.chrome import ChromeDriverManager
 chrome_options = Options()
