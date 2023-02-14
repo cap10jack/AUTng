@@ -15,7 +15,7 @@ print(res.text)
 driver.get("http://localhost:80/index.php")
 
 # Scenario 1: Test successful login
-username = driver.find_element("id","username")
+username = driver.find_element("xpath","//input[@id='username']")
 password = driver.find_element("id","password")
 
 username.send_keys("admin")
