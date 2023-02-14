@@ -31,7 +31,7 @@ password.send_keys("admin123")
 driver.find_element("xpath","//input[@type='submit']").click()
 time.sleep(2)
 
-if driver.current_url == "http://pluto18.epizy.com/home.php:
+if driver.current_url == "http://pluto18.epizy.com/home.php":
     print("Scenario 1: Testing Successful")
 else:
     print("Scenario 1: Testing Failed")
