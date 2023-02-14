@@ -3,7 +3,7 @@ from selenium.webdriver.common.keys import Keys
 import time
 from selenium.webdriver.chrome.options import Options
 # driver = webdriver.Chrome()
-dd
+
 chrome_options = Options()
 chrome_options.add_argument("--headless")
 driver = webdriver.Chrome(options=chrome_options)
