@@ -4,8 +4,11 @@ import time
 
 # driver = webdriver.Chrome()
 from webdriver_manager.chrome import ChromeDriverManager
+chrome_options = Options()
+chrome_options.add_argument("--headless")
+driver = webdriver.Chrome(ChromeDriverManager().install(),options=chrome_options)
 
-driver = webdriver.Chrome(ChromeDriverManager().install())
+# driver = webdriver.Chrome(options=chrome_options)
 
 driver.get("http://localhost/index.php")
 
