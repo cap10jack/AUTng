@@ -9,7 +9,9 @@ chrome_options.add_argument("--headless")
 driver = webdriver.Chrome(ChromeDriverManager().install(),options=chrome_options)
 
 # driver = webdriver.Chrome(options=chrome_options)
-
+import requests
+res = requests.get('http://localhost:80/index.php')
+print(res.text)
 driver.get("http://localhost:80/index.php")
 
 # Scenario 1: Test successful login
