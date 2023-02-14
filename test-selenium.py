@@ -14,13 +14,13 @@ driver = webdriver.Chrome(options=chrome_options)
 
 driver.get("http://localhost:80/index.php")
 
-# wait web driver 
-# delay = 5 # seconds
-# try:
-#     myElem = WebDriverWait(driver, delay).until(EC.presence_of_element_located(("name", 'username')))
-#     print("Page is ready!")
-# except Exception as e:
-#     print(driver.page_source)
+wait web driver 
+delay = 10 # seconds
+try:
+    myElem = WebDriverWait(driver, delay).until(EC.presence_of_element_located(("name", 'username')))
+    print("Page is ready!")
+except Exception as e:
+    print(driver.page_source)
     
 
 # Scenario 1: Test successful login
