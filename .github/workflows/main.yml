@@ -22,8 +22,8 @@ jobs:
     - name: Run Docker
       run: docker run -d -p 80:80 --name docker-apache -d my-apache2
     - name: Check Server
-      run: curl http://localhost:80/AUTng/index.php
-    - name: Install Google Chrom
+      run: curl http://localhost:80/index.php
+    - name: Install Google Chrome
       run: |
             chmod +x ./InstallChrome.sh
             ./InstallChrome.sh
