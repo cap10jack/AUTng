@@ -2,6 +2,8 @@ from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 import time
 from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 # driver = webdriver.Chrome()
 
 chrome_options = Options()
@@ -13,8 +15,12 @@ driver = webdriver.Chrome(options=chrome_options)
 driver.get("http://localhost:80/index.php")
 
 # wait web driver 
-print("Sleeping")
-time.sleep(10)
+delay = 5 # seconds
+try:
+    myElem = WebDriverWait(driver, delay).until(EC.presence_of_element_located(("id", 'username')))
+    print("Page is ready!")
+except TimeoutException:
+    print ("Loading took too much time!")
 
 # Scenario 1: Test successful login
 username = driver.find_element("id","username")
