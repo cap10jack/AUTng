@@ -19,8 +19,9 @@ delay = 5 # seconds
 try:
     myElem = WebDriverWait(driver, delay).until(EC.presence_of_element_located(("id", 'username')))
     print("Page is ready!")
-except TimeoutException:
+except Exception as e:
     print ("Loading took too much time!")
+    print(e)
 
 # Scenario 1: Test successful login
 username = driver.find_element("id","username")
