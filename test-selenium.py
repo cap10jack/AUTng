@@ -10,7 +10,7 @@ driver = webdriver.Chrome(ChromeDriverManager().install(),options=chrome_options
 
 # driver = webdriver.Chrome(options=chrome_options)
 
-driver.get("http://localhost/index.php")
+driver.get("http://localhost:80/index.php")
 
 # Scenario 1: Test successful login
 username = driver.find_element("id","username")
