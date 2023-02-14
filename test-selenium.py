@@ -2,8 +2,12 @@ from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 import time
 
-driver = webdriver.Chrome()
-driver.get("http://127.0.0.1:81/AUTng-main/AUTng-main/index.php")
+# driver = webdriver.Chrome()
+from webdriver_manager.chrome import ChromeDriverManager
+
+driver = webdriver.Chrome(ChromeDriverManager().install())
+
+driver.get("http://localhost/index.php")
 
 # Scenario 1: Test successful login
 username = driver.find_element("id","username")
@@ -15,7 +19,7 @@ password.send_keys("admin123")
 driver.find_element("xpath","//input[@type='submit']").click()
 time.sleep(2)
 
-if driver.current_url == "http://127.0.0.1:81/AUTng-main/AUTng-main/home.php":
+if driver.current_url == "http://localhost/home.php":
     print("Scenario 1: Testing Successful")
 else:
     print("Scenario 1: Testing Failed")
@@ -75,7 +79,7 @@ password.clear()
 
 driver.find_element("xpath","//input[@type='submit']").click()
 time.sleep(2)
-if driver.current_url == "http://127.0.0.1:81/AUTng-main/AUTng-main/index.php":
+if driver.current_url == "http://localhost/index.php":
     print("Scenario 4: Testing Successful")
 else:
     print("Scenario 4: Testing Failed")
@@ -94,7 +98,7 @@ password.send_keys("\x01")
 driver.find_element("xpath","//input[@type='submit']").click()
 
 time.sleep(2)
-if driver.current_url == "http://127.0.0.1:81/AUTng-main/AUTng-main/index.php":
+if driver.current_url == "http://localhost/index.php":
     print("Scenario 5: Testing Successful")
 else:
     print("Scenario 5: Testing Failed")
