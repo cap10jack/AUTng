@@ -20,7 +20,7 @@ driver.get("http://localhost:80/index.php")
 #     print("Page is ready!")
 # except Exception as e:
 #     print(driver.page_source)
-
+print("Test")
 input_elements = driver.find_elements("xpath",'//input')   
 for input_element in input_elements:
     input_id = input_element.get_attribute("id")
