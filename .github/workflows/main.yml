@@ -24,7 +24,7 @@ jobs:
         
     - name: Deploy website
       run: |
-        docker cp ${{ env.WORKSPACE }}/. apache-server:/usr/local/apache2/htdocs/
+        sudo docker cp ${{ env.WORKSPACE }}/. apache-server:/usr/local/apache2/htdocs/
         
     - name: Show website URL
       run: |
