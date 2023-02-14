@@ -1,0 +1,45 @@
+name: Python Selenium
+
+on:
+  push:
+    branches:
+      - main
+
+env:
+  APACHE_PORT: 80
+  PYTHON_VERSION: 3.8
+  
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+      
+    - name: Set up Docker
+      uses: docker://docker:19.03.13
+      with:
+        args: docker run -d --name apache-server -p ${{ env.APACHE_PORT }}:80 -v ${{ env.WORKSPACE }}:/usr/local/apache2/htdocs httpd:2.4-alpine
+        
+    - name: Deploy website
+      run: |
+        docker cp ${{ env.WORKSPACE }}/. apache-server:/usr/local/apache2/htdocs/
+        
+    - name: Show website URL
+      run: |
+        echo "Website URL: http://localhost:${{ env.APACHE_PORT }}"
+    
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Set up Python environment
+      uses: actions/setup-python@v3
+      with:
+        python-version: ${{ env.PYTHON_VERSION }}
+
+    - name: Install dependencies
+      run: |
+        pip install selenium
+        pip install pytest
+
