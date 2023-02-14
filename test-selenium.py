@@ -13,7 +13,7 @@ driver = webdriver.Chrome(options=chrome_options)
 # driver = webdriver.Chrome(options=chrome_options)
 
 driver.get("http://pluto18.epizy.com/index.php")
-time.sleep(10)
+
 # delay = 10 # seconds
 # try:
 #     myElem = WebDriverWait(driver, delay).until(EC.presence_of_element_located(("name", 'username')))
@@ -21,7 +21,7 @@ time.sleep(10)
 # except Exception as e:
 #     print(driver.page_source)
 
-Scenario 1: Test successful login
+# Scenario 1: Test successful login
 username = driver.find_element("xpath","//input[@name='username']")
 password = driver.find_element("id","password")
 
@@ -91,7 +91,7 @@ password.clear()
 
 driver.find_element("xpath","//input[@type='submit']").click()
 time.sleep(2)
-if driver.current_url == "http://localhost/index.php":
+if driver.current_url == "http://pluto18.epizy.com/index.php":
     print("Scenario 4: Testing Successful")
 else:
     print("Scenario 4: Testing Failed")
@@ -110,7 +110,7 @@ password.send_keys("\x01")
 driver.find_element("xpath","//input[@type='submit']").click()
 
 time.sleep(2)
-if driver.current_url == "http://localhost/index.php":
+if driver.current_url == "http://pluto18.epizy.com/index.php":
     print("Scenario 5: Testing Successful")
 else:
     print("Scenario 5: Testing Failed")
