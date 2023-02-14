@@ -20,8 +20,12 @@ driver.get("http://localhost:80/index.php")
 #     print("Page is ready!")
 # except Exception as e:
 #     print(driver.page_source)
-    
-
+input_elements = driver.find_elements("xpath",'//input')   
+for input_element in input_elements:
+    input_id = input_element.get_attribute("id")
+    if input_id:
+        print(input_id)
+        
 # Scenario 1: Test successful login
 username = driver.find_element("xpath","//input[@name='username']")
 password = driver.find_element("id","password")
