@@ -20,8 +20,8 @@ try:
     myElem = WebDriverWait(driver, delay).until(EC.presence_of_element_located(("id", 'username')))
     print("Page is ready!")
 except Exception as e:
-    print ("Loading took too much time!")
-    print(e)
+    print(driver.page_source)
+    
 
 # Scenario 1: Test successful login
 username = driver.find_element("id","username")
