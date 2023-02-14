@@ -46,6 +46,7 @@ jobs:
       run: |
         pip install selenium
         pip install pytest
+        pip install webdriver-manager
     - name: run script
       run: |
             cd ./AUTng
