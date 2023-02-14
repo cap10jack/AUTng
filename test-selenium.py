@@ -15,11 +15,8 @@ print(res.text)
 driver.get("http://localhost:80/index.php")
 
 # wait web driver 
-from selenium.webdriver.support.ui import WebDriverWait
-
-time.sleep(2)
-# Wait for up to 10 seconds for an element with ID "myButton" to be clickable
-wait = WebDriverWait(driver, 5)
+print("Sleeping")
+time.sleep(10)
 
 # Scenario 1: Test successful login
 username = driver.find_element("id","username")
