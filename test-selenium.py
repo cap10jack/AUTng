@@ -13,7 +13,7 @@ driver = webdriver.Chrome(options=chrome_options)
 # driver = webdriver.Chrome(options=chrome_options)
 
 driver.get("http://localhost:80/index.php")
-sleep(10)
+time.sleep(10)
 # delay = 10 # seconds
 # try:
 #     myElem = WebDriverWait(driver, delay).until(EC.presence_of_element_located(("name", 'username')))
